@@ -6,6 +6,8 @@ const forecast=require('./utils/forecast')
 
 const app=express();
 
+const port=process.env.PORT || 3000
+
 publicPath=path.join(__dirname,'../public')
 viewsPath=path.join(__dirname,'../templates/views')
 partialsPath=path.join(__dirname,'../templates/partials')
@@ -86,6 +88,6 @@ app.get('*',(req,res)=>{
         error:'Page not found.'
     })
 })
-app.listen(3000,()=>{
-    console.log('Server is up!');
+app.listen(port,()=>{
+    console.log('Server is up on port '+port);
 })
